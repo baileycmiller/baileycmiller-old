@@ -1,0 +1,115 @@
+/**
+Font styles
+font-size, font-family, font-weight, font-style, text-transform, text-decoration
+DOES NOT INCLUDE TEXT-ALIGN
+**/
+
+//Body
+html, body {
+    font-family: $font-body;
+    font-weight: 300;
+}
+
+p {
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3 {
+  font-size: 40px;
+  font-family: $font-headings;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+h4 {
+  font-size: 30px;
+  font-family: $font-headings;
+  font-weight: 400;
+}
+
+//Header
+#mainheader #menu li {
+    font-size: 10px;
+}
+
+#mainheader #menu li a {
+    font-weight: 500;
+    color: $black-color;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+//Footer
+footer p {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: $font-headings;
+}
+
+//Buttons
+#meet {
+  text-decoration: none;
+}
+
+#meet:hover {
+    text-decoration: none;
+}
+
+//About page only
+#social {
+  font-family: $font-headings;
+}
+
+#bigger {
+  font-family: $font-headings;
+  font-size: 22px;
+}
+
+//Home page only
+#subheading {
+    font-size: 24px;
+    font-family: $font-headings;
+    font-style: normal;
+    font-weight: 400;
+}
+
+//Work pages only
+#normalp {
+  font-family: $font-body;
+  font-weight: 300;
+  font-size: 18px;
+}
+
+
+/*big screens only*/
+@media (min-width: 768px) {
+//Header
+    #mainheader #menu li {
+        font-size: 18px;
+    }
+
+    #mainheader #menu li a {
+        font-size: 16px;
+    }
+
+//Index page only
+    #subheading {
+        font-size: 28px;
+    }
+}
+
+
+/*small screens only*/
+@media only screen and (max-width: 1000px) {
+    #social {
+        font-family: $font-headings;
+    }
+    #bigger {
+        font-family: $font-headings;
+        font-size: 22px;
+    }
+}

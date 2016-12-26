@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://use.typekit.net/ghs8eud.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,100,300,700,700italic,300italic,100italic,400italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700' rel='stylesheet' type='text/css'>
+        <link rel="shortcut icon" href="favicon.ico"/>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Bailey Miller</title>
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="css/main.css">
+        <script src="d3.v2.min.js"></script>
+        <script src="data.js"></script>
+        <link rel="stylesheet" type="text/css" href="GridGallery/css/component.css" />
+<style>
+        html{
+            font-family: 'Lato', sans-serif;
+		    font-size: 9pt;
+            margin: 20px;
+        }
+        h1{
+            font-size: 40px;
+    font-family: 'futura-pt', Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+            padding-top: 20px;
+        }
+        h2{
+            font-family: 'futura-pt', Arial, sans-serif;
+    text-transform: uppercase;
+            text-align: center;
+            font-size: 16pt;
+            font-weight: 400;
+        }
+        #discusHeader p, #source p{
+            text-align: center;
+            font-weight: 400;
+            width: 800px;
+            margin: 0 auto;
+            font-size: 12px;
+            margin-bottom: 40px;
+        }
+        #wordBubble p {
+            font-size: 9pt;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        #discusChart a:hover{
+            color: white;
+            background-color: grey;
+            border: 1px solid grey;
+        }
+		path {
+		    fill: none;
+		}
+		.goldMen {
+			stroke: steelblue;
+			stroke-width: 1;
+		    font-size: 9pt;
+            color: steelblue;
+        }
+        .menDot{
+            stroke: steelblue;
+			stroke-width: .5;
+			fill: steelblue;
+            color: steelblue;
+        }
+        .goldWomen {
+			stroke: deeppink;
+			stroke-width: 1;
+		    font-size: 9pt;
+            color: deeppink;
+		}
+        .womenDot{
+            stroke: deeppink;
+			stroke-width: .5;
+			fill: deeppink;
+            color: deeppink;
+        }
+        .noneDot{
+            stroke: black;
+			stroke-width: 1;
+			fill: white;
+            color: black;
+        }
+		#weekLine {
+			stroke: gray;
+			stroke-width: 1;
+			stroke-dasharray: 5,5;
+		}
+        #wordBubble {
+            border: 1px solid gray;
+            width: 330px;
+            padding: 10px;
+            background-color: white;
+/*            opacity: 0.5;*/
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-top: 80px;
+            margin-left: 30px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            pointer-events: none;
+        }
+        #medals{
+            text-align:center;
+            margin: 20px auto;
+        }
+        .selected, .unselected {
+            text-decoration: none;
+            text-align: center;
+            margin: 0;
+            font-size: 14pt;
+            padding: 10px;
+            width: 100px;
+        }
+        .selected{
+            color: white;
+            background-color: black;
+            border: 1px solid black;
+        }
+        .unselected{
+            color: black;
+            background-color: white;
+            border: 1px solid #a5a5a5;
+        }
+        article{
+            margin-top: 80px;
+        }
+        #chart{
+            float: center;
+            margin: 0 auto;
+            text-align: center;
+            padding-bottom: 20px;
+            padding-left: 30px;
+        }
+        #weekLine {
+			stroke: gray;
+			stroke-width: 1;
+			stroke-dasharray: 5,5;
+		}
+        .medal{
+            width: 50px;
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+        }
+        .throw{
+            width: 52px;
+            display: inline-block;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+        .person{
+            width: 140px;
+            display: inline-block;
+            text-align: left;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: black;
+            shape-rendering: crispEdges;
+        }
+        .axis text {
+            font-family: sans-serif;
+            font-size: 11px;
+        }
+	</style>
+</head>
+    
+<body>
+    <header id="mainheader">
+            <a id='logo' href='index.html'><img src="img/sketchlogo.png"></a>
+            <ul id='menu'>
+                <li>
+                    <a id="current" href="index.html">Work</a>
+                </li>
+                <li>
+                    <a href="photography.html">Photography</a>
+                </li>   
+                <li>
+                    <a href='blog'>Blog</a>
+                </li>
+                <li>
+                    <a href='about.html'>About</a>
+                </li>
+            </ul>
+        </header>
+        <h3>
+                Olympic Discus Lines
+            </h3>
+    <p class="centertext"><i>March 2016<br>
+        Skills used: D3, HTML, CSS, JavaScript, JSON, Photoshop, Illustrator</i></p><br><br>
+    
+            <h2>
+                A look at the change in Olympic discus medal winning throws through the years
+            </h2>
+    <div id="hidden"><p><strong>(To view visualization, please view this page on a desktop).</strong></p></div>
+        <div id="discusChart">
+            <div id="discusHeader">
+            <p>
+                Discus is an Olympic Track & Field event in which participants attempt to throw a heavy lenticular disc farther than their competitors.
+    The disc has a weight of 2 kilograms (4.4 lb) for the men’s event and a weight of 1 kilogram (2.2 lb) for the women’s. The men’s discus event
+    has been offered since the first Olympic games in 1896. The women’s discus event was first contested in the 1928 Amsterdam games.
+            </p>
+            <div id="medals">
+                <a href="#" class="unselected" id="gold" onclick="gold(); return false;">Gold</a>
+                <a href="#" class="unselected" id="silver" onclick="silver(); return false;">Silver</a>
+                <a href="#" class="unselected" id="bronze" onclick="bronze(); return false;">Bronze</a>
+            </div>
+        </div>
+
+        <article>
+            <div id="chart">
+            </div>
+        </article>
+
+        <div id="wordBubble">
+        </div>
+    </div>
+        <div id="source">
+            <p>Sources:<br><a href="http://www.olympic.org">www.olympic.org</a><br><a href="http://www.databaseolympics.com">www.databaseolympics.com</a></p>
+        </div>
+        
+    
+        <h4>Overview</h4>
+        <p id="normalp">The goal of this project was to represent an interesting story using some portion of Olympics data through an interactive visual display. In my work, I chose to show the progress of the sport of discus over time. I used the JavaScript library, d3 to program the visuals and interaction.
+            <h4>Process</h4>
+    <p id="normalp">
+ The first step of the process was to find an interesting story in the wide range of Olympic data. I was interested in looking at the progress of athleticism over time, and figured the Athletics category would be the best place to look. I had seen other visualizations that showed the dramatic progress of 100m dash times and wanted to look for more similar patterns. I encountered the discus data and thought it was a worthwhile story to showcase. In my data gathering, I discovered that the winning discus throws being reported are getting farther and farther as the years go on. The improvement of winning scores over the years could be attributed to equipment, strategies, or a number of other factors. I thought any sort of dramatic progress like this in a single sport would make an interesting visualization.<br><br>
+    Once I had acquired, parsed, filtered, and mined through the data I wanted to use, I found the best way to represent it was through a classic line graph. I was interested in incorporating both men's and women's discus because the patterns were quite interesting. Although the women's games didn't begin until 1928, the women's athletes managed to catch up to and even beat out the men's scores in some years. Although men throw a discus that's twice the weight of women's, it was an interesting discovery. So, I chose to show both the men's and women's scores on the same graph for comparison, and let the user switch between gold, silver, and bronze to cut down on visual clutter.<br><br>
+        Before coding the visualization in d3, I first made a mockup in Illustrator, organizing the fonts, colors, graphic elements, and overall organization of the graph. After that was secured, it was then time to dive into code. I first worked on programming the display as a static graph. Then I added interactivity between the gold, silver, and bronze graphs and a rollover feature. This made it so I could keep the graph simple and clean, using progressive disclosure to show more detailed information with interaction. That way, the user could find out more specific information like the throw distance, medal winners, and countries when they want to, not all at first glance.</p>
+    <h4>Takeaways</h4>
+    <p id="normalp">
+        As with any digital project, there were many technical difficulties to get through. This was one of my first projects in d3, so I found myself doing a lot of guess and check by default. This process worked some of the time, but I found that it's important to really understand which piece of code is doing what, so that it's easier on workload in the long run. Building a mockup in Illustrator was a lifesaver and made it so I could easily transition into code, knowing exactly how I wanted it to look before diving in.
+    </p>
+        <p id="nav"><a href="logos.html"><img src="img/leftarrow.png"/></a>  <a href="thoughtbox.html"><img src="img/rightarrow.png"/></a></p>
+
+<div id="titleDiv">
+            <h1 id="title">Work</h1>
+            <img id="squigly2" src="img/squigly.png"/>
+</div>
+<div id="grid_wrapper">
+    <div class="grid">
+        <div class="grid">
+        <div class="grid-item">
+            <a class="hover" href="leisure.html" id="grid1">
+                <img src="img/Projects/leisureicon.png">
+                <img src="img/Projects/leisurealt.jpg">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a class="hover" href="malaria.html" id="grid1">
+                <img src="img/Projects/malariathumbnail.png">
+                <img src="img/Projects/malariaalt.jpg">
+            </a>
+        </div>
+            <div class="grid-item">
+            <a class="hover" href="here.html" id="grid1">
+                <img src="img/Projects/hereicon.png">
+                <img src="img/Projects/herealt.png">
+            </a>
+        </div>
+            <div class="grid-item">
+            <a class="hover" href="logos.html">
+                <img src="img/Projects/logos.png">
+                <img src="img/Projects/logosalt.png">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a class="hover" href="discuslines.html" id="grid1">
+                <img src="img/Projects/discus.png">
+                <img src="img/Projects/discusalt.jpg">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a class="hover" href="thoughtbox.html">
+                <img src="img/Projects/thoughtbox.jpg">
+                <img src="img/Projects/thoughtboxalt.png">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a class="hover" href="zhishiQ.html">
+                <img src="img/Projects/zhishiq.png">
+                <img src="img/Projects/zhishiqalt.png">
+            </a>
+        </div>
+        <div class="grid-item">
+            <a class="hover" href="tintypes_project.html" id="grid1">
+                <img src="img/Projects/tintype3small.png">
+                <img src="img/Projects/tintypealt.jpg">
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+    
+    <footer>
+        <p>&copy; 2015 by Bailey Miller</p>
+        </footer>
+
+    
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <!--Images loaded-->
+    <script src="imagesloaded.pkgd.min.js"></script>
+    
+    <script src="masonry.pkgd.min.js"></script>
+    <script> 
+jQuery(window).on('load', function(){
+
+    $('.grid').masonry({
+  // options
+        itemSelector: '.grid-item',
+//  columnWidth: 145,
+            "gutter": 25,
+            isFitWidth: true
+    });
+});
+    </script>
+
+    <!--google analytics-->
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-69929208-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    <script type="text/javascript">
+    var margin = {top: 20, right: 5, bottom: 50, left: 25},
+    w = 1135 - margin.left - margin.right,
+    h = 670 - margin.top - margin.bottom;
+
+var vis = d3.select("#chart")
+    .append("svg:svg")
+        .attr("width", w + margin.left + margin.right)
+        .attr("height", h + margin.top+ margin.bottom);
+$("#wordBubble").hide();
+    
+window.onload = gold();
+
+    var goldGraph;
+    var lineMen;
+    var lineWomen;
+    
+    function gold(){
+        d3.selectAll("svg > *").remove();
+        $("#gold").attr("class","selected");
+        $("#silver").attr("class","unselected");
+        $("#bronze").attr("class","unselected");
+
+        goldGraph = vis.append("svg:g")
+            .attr("transform", "translate(25, 580)");
+
+        //Men's Gold
+        lineMen = d3.svg.line()
+            //x spacing
+            .x(function(d,i) {
+                return i*38;
+            })
+            //height
+            .y(function(d) { 
+                return -8 * d.MGResult;
+            })
+        goldGraph.append("svg:path").attr("d", lineMen(data))
+             .attr("class","goldMen");
+
+
+            //Women's Gold
+        lineWomen = d3.svg.line()
+            //x spacing
+            .x(function(d,i) {
+                if (d.WGResult != 0) {
+                    return i*38;
+                } else {
+                    return 8*38;
+                }
+            })
+            //height
+            .y(function(d) { 
+                if (d.WGResult != 0) {
+                    return -8 * d.WGResult;
+                } else {
+                    return -8*39.62;
+                }
+            })
+        goldGraph.append("svg:path").attr("d", lineWomen(data))
+             .attr("class","goldWomen");
+
+    var noneDot1 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot1")
+        .attr("class","noneDot");
+    
+    var noneDot2 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot2")
+        .attr("class","noneDot");
+    
+    var noneDot3 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot3")
+        .attr("class","noneDot");
+        
+    var noneDot9 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot9")
+        .attr("class","noneDot");
+    
+    var noneDot10 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot10")
+        .attr("class","noneDot");
+        
+        //Draw none dots
+    d3.select("#noneDot1")
+        .attr("cx", 190+25)
+        .attr("cy", h-margin.top-359.6);
+    
+    d3.select("#noneDot2")
+        .attr("cx", 418+25)
+        .attr("cy", h-margin.top-(51.25*8));
+    
+    d3.select("#noneDot3")
+        .attr("cx", 456+25)
+        .attr("cy", h-margin.top-(52.01*8));
+    
+    d3.select("#noneDot9")
+        .attr("cx", 418+25)
+        .attr("cy", h-margin.top-(45.73*8));
+    
+    d3.select("#noneDot10")
+        .attr("cx", 456+25)
+        .attr("cy", h-margin.top-(43.83*8));
+        
+        
+        //Line
+    var weekLine = vis.append("line")
+        .attr("x1", -50)
+        .attr("y1", 0)
+        .attr("x2", -50)
+        .attr("y2", h)
+        .attr("id","weekLine");
+    
+    //Dots
+    var menGoldDot = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","5")
+        .attr("id","menGoldDot")
+        .attr("class","menDot");
+
+    var womenGoldDot = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","5")
+        .attr("id","womenGoldDot")
+        .attr("class","womenDot");
+    
+    
+vis.on("mousemove", mousemove);
+vis.on("mouseleave", mouseleave);
+    
+function mousemove() {  
+        var coords = d3.mouse(this);
+    
+        var xpos = Math.floor((coords[0]-26)/38)*38;
+        var elementOffset = ($(".goldMen").offset().left)-margin.left;
+        var distance = (xpos + elementOffset + 5);
+        
+        var ypos = data[Math.round((coords[0]-45)/38)].MGResult * 8;
+        var elementOffsetY = ($(".goldMen").offset().top)-110;
+        var distanceY = elementOffsetY + h - ypos;
+    
+        //Word Bubble
+        if (data[Math.round((coords[0]-45)/38)].Year == "1916") {
+            $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/>No Olympics - WWI")
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1");
+        } else if (data[Math.round((coords[0]-45)/38)].Year == "1940") {
+            $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/>No Olympics - WWII")
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1");
+        } else if (data[Math.round((coords[0]-45)/38)].Year == "1944") {
+            $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/>No Olympics - WWII")
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1");
+        } else if (data[Math.round((coords[0]-45)/38)].Year < "1928") {
+            $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/><strong class='goldMen'>Men</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MBCountry)
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1");
+        } else if(data[Math.round((coords[0]-45)/38)].Year >= "1928" && data[Math.round((coords[0]-45)/38)].Year < "1980"){
+        
+        $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/><strong class='goldMen'>Men</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MBCountry +"<br/><strong class='goldWomen'>Women</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WBCountry)
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1"); 
+        } else {
+        
+        $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/><strong class='goldMen'>Men</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MBCountry +"<br/><strong class='goldWomen'>Women</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WBCountry)
+            .css("left", distance-370)
+            .css("top", distanceY)
+            .css("opacity","1"); 
+        }
+                    
+
+        d3.select("#weekLine")
+            .attr("x1", 25+Math.floor((coords[0]-26)/38)*38)
+            .attr("y1", 0)
+            .attr("x2", 25+Math.floor((coords[0]-26)/38)*38)
+            .attr("y2", h);
+        
+        d3.select("#menGoldDot")
+            .attr("cx", 25+Math.floor((coords[0]-26)/38)*38)
+            .attr("cy", h-(data[Math.floor((coords[0]-26)/38)].MGResult*8)-20);
+                    
+        if (data[Math.round((coords[0]-45)/38)].WGResult != 0) {
+                    $("#womenGoldDot").show();
+                    d3.select("#womenGoldDot")
+                        .attr("cx", 25+Math.floor((coords[0]-26)/38)*38)
+                        .attr("cy", h-(data[Math.floor((coords[0]-26)/38)].WGResult*8)-20);
+                } else {
+                    $("#womenGoldDot").hide();
+                }
+    $("#wordBubble").show();
+    $("#menGoldDot").show();
+    $("#weekLine").show();
+    
+} //End Mousemove
+    
+function mouseleave() { 
+    $("#wordBubble").hide();
+    $("#womenGoldDot").hide();
+    $("#menGoldDot").hide();
+    $("#weekLine").hide();
+}
+        
+        
+        
+        drawAxes();
+    }
+
+    function silver(){
+        d3.selectAll("svg > *").remove();
+        $("#gold").attr("class","unselected");
+        $("#silver").attr("class","selected");
+        $("#bronze").attr("class","unselected");
+
+        goldGraph = vis.append("svg:g")
+            .attr("transform", "translate(25, 580)");
+
+        //Men's Silver
+        lineMen = d3.svg.line()
+            //x spacing
+            .x(function(d,i) {
+                return i*38;
+            })
+            //height
+            .y(function(d) { 
+                return -8 * d.MSResult;
+            })
+        goldGraph.append("svg:path").attr("d", lineMen(data))
+//            .attr("transform", "translate(25,-20)")
+             .attr("class","goldMen");
+
+            //Women's Silver
+        lineWomen = d3.svg.line()
+            //x spacing
+            .x(function(d,i) {
+                if (d.WSResult != 0) {
+                    return i*38;
+                } else {
+                    return 8*38;
+                }
+            })
+            //height
+            .y(function(d) { 
+                if (d.WGResult != 0) {
+                    return -8 * d.WSResult;
+                } else {
+                    return -8*37.08;
+                }
+            })
+        goldGraph.append("svg:path").attr("d", lineWomen(data))
+//        .attr("transform", "translate(25,-20)")
+             .attr("class","goldWomen");
+
+    var noneDot4 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot4")
+        .attr("class","noneDot");
+    
+    var noneDot5 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot5")
+        .attr("class","noneDot");
+    
+    var noneDot6 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot6")
+        .attr("class","noneDot");
+        
+    var noneDot7 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot7")
+        .attr("class","noneDot");
+    
+    var noneDot8 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot8")
+        .attr("class","noneDot");
+        
+        //Draw none dots
+    d3.select("#noneDot4")
+        .attr("cx", 190+25)
+        .attr("cy", h-margin.top-(43.255*8));
+    
+    d3.select("#noneDot5")
+        .attr("cx", 418+25)
+        .attr("cy", h-margin.top-(50.17*8));
+    
+    d3.select("#noneDot6")
+        .attr("cx", 456+25)
+        .attr("cy", h-margin.top-(50.97*8));
+        
+    d3.select("#noneDot7")
+        .attr("cx", 418+25)
+        .attr("cy", h-margin.top-(44.54*8));
+    
+    d3.select("#noneDot8")
+        .attr("cx", 456+25)
+        .attr("cy", h-margin.top-(42.86*8));
+        
+        
+        //Line
+    var weekLine = vis.append("line")
+        .attr("x1", -50)
+        .attr("y1", 0)
+        .attr("x2", -50)
+        .attr("y2", h)
+        .attr("id","weekLine");
+    
+    //Dots
+    var menGoldDot = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","5")
+        .attr("id","menGoldDot")
+        .attr("class","menDot");
+
+    var womenGoldDot = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","5")
+        .attr("id","womenGoldDot")
+        .attr("class","womenDot");
+    
+    
+vis.on("mousemove", mousemove);
+vis.on("mouseleave", mouseleave);
+    
+function mousemove() {  
+        var coords = d3.mouse(this);
+        var xpos = Math.floor((coords[0]-26)/38)*38;
+        var elementOffset = ($(".goldMen").offset().left)-margin.left;
+        var distance = (xpos + elementOffset +5);
+        
+        var ypos = data[Math.round((coords[0]-45)/38)].MSResult * 8;
+        var elementOffsetY = ($(".goldMen").offset().top)-110;
+        var distanceY = elementOffsetY + h - ypos;
+    
+        //Word Bubble
+        if (data[Math.round((coords[0]-45)/38)].Year == "1916") {
+            $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/>No Olympics - WWI")
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1");
+        } else if (data[Math.round((coords[0]-45)/38)].Year == "1940") {
+            $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/>No Olympics - WWII")
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1");
+        } else if (data[Math.round((coords[0]-45)/38)].Year == "1944") {
+            $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/>No Olympics - WWII")
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1");
+        } else if (data[Math.round((coords[0]-45)/38)].Year < "1928") {
+            $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/><strong class='goldMen'>Men</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MBCountry)
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1");
+        } else if(data[Math.round((coords[0]-45)/38)].Year >= "1928" && data[Math.round((coords[0]-45)/38)].Year < "1980"){
+        
+        $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/><strong class='goldMen'>Men</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MBCountry +"<br/><strong class='goldWomen'>Women</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WBCountry)
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1"); 
+        } else {
+        $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/><strong class='goldMen'>Men</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MBCountry +"<br/><strong class='goldWomen'>Women</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WBCountry)
+            .css("left", distance-370)
+            .css("top", distanceY)
+            .css("opacity","1"); 
+        }
+                    
+
+        d3.select("#weekLine")
+            .attr("x1", 25+Math.floor((coords[0]-26)/38)*38)
+            .attr("y1", 0)
+            .attr("x2", 25+Math.floor((coords[0]-26)/38)*38)
+            .attr("y2", h);
+        
+        d3.select("#menGoldDot")
+            .attr("cx", 25+Math.floor((coords[0]-26)/38)*38)
+            .attr("cy", h-(data[Math.floor((coords[0]-26)/38)].MSResult*8)-20);
+                    
+        if (data[Math.round((coords[0]-45)/38)].WSResult != 0) {
+                    $("#womenGoldDot").show();
+                    d3.select("#womenGoldDot")
+                        .attr("cx", 25+Math.floor((coords[0]-26)/38)*38)
+                        .attr("cy", h-(data[Math.floor((coords[0]-26)/38)].WSResult*8)-20);
+                } else {
+                    $("#womenGoldDot").hide();
+                }
+    $("#wordBubble").show();
+    $("#menGoldDot").show();
+    $("#weekLine").show();
+    
+} //End Mousemove
+    
+function mouseleave() { 
+    $("#wordBubble").hide();
+    $("#womenGoldDot").hide();
+    $("#menGoldDot").hide();
+    $("#weekLine").hide();
+}
+        
+        
+        drawAxes();
+    }
+
+
+    function bronze(){
+        d3.selectAll("svg > *").remove();
+        $("#gold").attr("class","unselected");
+        $("#silver").attr("class","unselected");
+        $("#bronze").attr("class","selected");
+
+        goldGraph = vis.append("svg:g")
+            .attr("transform", "translate(25, 580)");
+
+        //Men's Bronze
+        lineMen = d3.svg.line()
+            //x spacing
+            .x(function(d,i) {
+                return i*38;
+            })
+            //height
+            .y(function(d) { 
+                return -8 * d.MBResult;
+            })
+        goldGraph.append("svg:path").attr("d", lineMen(data))
+//            .attr("transform", "translate(25,-20)")
+             .attr("class","goldMen");
+
+            //Women's Bronze
+        lineWomen = d3.svg.line()
+            //x spacing
+            .x(function(d,i) {
+                if (d.WSResult != 0) {
+                    return i*38;
+                } else {
+                    return 8*38;
+                }
+            })
+            //height
+            .y(function(d) { 
+                if (d.WGResult != 0) {
+                    return -8 * d.WBResult;
+                } else {
+                    return -8*35.92;
+                }
+            })
+        goldGraph.append("svg:path").attr("d", lineWomen(data))
+//            .attr("transform", "translate(25,-20)")
+             .attr("class","goldWomen");
+
+    var noneDot11 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot11")
+        .attr("class","noneDot");
+    
+    var noneDot12 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot12")
+        .attr("class","noneDot");
+    
+    var noneDot13 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot13")
+        .attr("class","noneDot");
+        
+    var noneDot14 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot14")
+        .attr("class","noneDot");
+    
+    var noneDot15 = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","6")
+        .attr("id","noneDot15")
+        .attr("class","noneDot");
+        
+        //Draw none dots
+    d3.select("#noneDot11")
+        .attr("cx", 190+25)
+        .attr("cy", h-margin.top-(42.205*8));
+    
+    d3.select("#noneDot12")
+        .attr("cx", 418+25)
+        .attr("cy", h-margin.top-(49.75*8));
+    
+    d3.select("#noneDot13")
+        .attr("cx", 456+25)
+        .attr("cy", h-margin.top-(50.26*8));
+    
+    d3.select("#noneDot14")
+        .attr("cx", 418+25)
+        .attr("cy", h-margin.top-(40.03*8));
+    
+    d3.select("#noneDot15")
+        .attr("cx", 456+25)
+        .attr("cy", h-margin.top-(40.25*8));
+        
+        
+        
+        //Line
+    var weekLine = vis.append("line")
+        .attr("x1", -50)
+        .attr("y1", 0)
+        .attr("x2", -50)
+        .attr("y2", h)
+        .attr("id","weekLine");
+    
+    //Dots
+    var menGoldDot = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","5")
+        .attr("id","menGoldDot")
+        .attr("class","menDot");
+
+    var womenGoldDot = vis.append("circle")
+        .attr("cx","-5")
+        .attr("cy","-5")
+        .attr("r","5")
+        .attr("id","womenGoldDot")
+        .attr("class","womenDot");
+    
+    
+vis.on("mousemove", mousemove);
+vis.on("mouseleave", mouseleave);
+    
+function mousemove() {  
+        var coords = d3.mouse(this);
+        var xpos = Math.floor((coords[0]-26)/38)*38;
+        var elementOffset = ($(".goldMen").offset().left)-margin.left;
+        var distance = (xpos + elementOffset + 5);
+    
+        var ypos = data[Math.round((coords[0]-45)/38)].MBResult * 8;
+        var elementOffsetY = ($(".goldMen").offset().top)-110;
+        var distanceY = elementOffsetY + h - ypos;
+
+        //Word Bubble
+        if (data[Math.round((coords[0]-45)/38)].Year == "1916") {
+            $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/>No Olympics - WWI")
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1");
+        } else if (data[Math.round((coords[0]-45)/38)].Year == "1940") {
+            $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/>No Olympics - WWII")
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1");
+        } else if (data[Math.round((coords[0]-45)/38)].Year == "1944") {
+            $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/>No Olympics - WWII")
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1");
+        } else if (data[Math.round((coords[0]-45)/38)].Year < "1928") {
+            $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/><strong class='goldMen'>Men</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MBCountry)
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1");
+        } else if(data[Math.round((coords[0]-45)/38)].Year >= "1928" && data[Math.round((coords[0]-45)/38)].Year < "1980"){
+        
+        $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/><strong class='goldMen'>Men</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MBCountry +"<br/><strong class='goldWomen'>Women</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WBCountry)
+            .css("left", distance)
+            .css("top", distanceY)
+            .css("opacity","1"); 
+        } else {
+        
+        $("#wordBubble").html("<strong>" + data[Math.round((coords[0]-45)/38)].Year + "</strong><br/><strong class='goldMen'>Men</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].MBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].MBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].MBCountry +"<br/><strong class='goldWomen'>Women</strong><br><strong class='medal'>Gold:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WGResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WGAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WGCountry +"<br/><strong class='medal'>Silver:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WSResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WSAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WSCountry +"<br/><strong class='medal'>Bronze:</strong><p class='throw'>" + data[Math.round((coords[0]-45)/38)].WBResult +"m</p><p class='person'>"+ data[Math.round((coords[0]-45)/38)].WBAthlete +"</p>"+ data[Math.round((coords[0]-45)/38)].WBCountry)
+            .css("left", distance-370)
+            .css("top", distanceY)
+            .css("opacity","1"); 
+        }
+                    
+
+        d3.select("#weekLine")
+            .attr("x1", 25+Math.floor((coords[0]-26)/38)*38)
+            .attr("y1", 0)
+            .attr("x2", 25+Math.floor((coords[0]-26)/38)*38)
+            .attr("y2", h);
+        
+        d3.select("#menGoldDot")
+            .attr("cx", 25+Math.floor((coords[0]-26)/38)*38)
+            .attr("cy", h-(data[Math.floor((coords[0]-26)/38)].MBResult*8)-20);
+                    
+        if (data[Math.round((coords[0]-45)/38)].WBResult != 0) {
+                    $("#womenGoldDot").show();
+                    d3.select("#womenGoldDot")
+                        .attr("cx", 25+Math.floor((coords[0]-26)/38)*38)
+                        .attr("cy", h-(data[Math.floor((coords[0]-26)/38)].WBResult*8)-20);
+                } else {
+                    $("#womenGoldDot").hide();
+                }
+    $("#wordBubble").show();
+    $("#menGoldDot").show();
+    $("#weekLine").show();
+    
+} //End Mousemove
+    
+function mouseleave() { 
+    $("#wordBubble").hide();
+    $("#womenGoldDot").hide();
+    $("#menGoldDot").hide();
+    $("#weekLine").hide();
+}
+        
+        
+        drawAxes();
+    }
+
+
+function drawAxes(){
+        // Set the ranges
+var x = d3.time.scale().domain([1896, 2012]).range([0, w]);
+var y = d3.scale.linear().domain([75, 0]).range([0, h]);
+
+// Define the axes
+var xAxis = d3.svg.axis().scale(x)
+    .orient("bottom").tickFormat(d3.format("d")).tickValues(d3.range(1896, 2012, 8));
+
+var yAxis = d3.svg.axis().scale(y)
+    .orient("left").tickFormat(d3.format("d"));
+    
+    
+    //Create an SVG group Element for the Axis elements and call xAxis
+    var xAxisGroup = vis.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(25, 580)")
+            .call(xAxis);
+
+    //Create an SVG group Element for the Axis elements and call yAxis
+    var yAxisGroup = vis.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(25,-20)")
+            .call(yAxis);
+}
+</script>
+    </body>
+</html>

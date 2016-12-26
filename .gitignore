@@ -1,0 +1,56 @@
+# Ignore necessary Wordpress files
+blog/*.log
+blog/wp-config.php
+blog/wp-content/advanced-cache.php
+blog/wp-content/backup-db/
+blog/wp-content/backups/
+blog/wp-content/blogs.dir/
+blog/wp-content/cache/
+blog/wp-content/upgrade/
+blog/wp-content/uploads/
+blog/wp-content/wp-cache-config.php
+blog/wp-content/plugins/hello.php
+
+blog/.htaccess
+blog/license.txt
+blog/readme.html
+blog/sitemap.xml
+blog/sitemap.xml.gz
+
+
+# ignore all files starting with . or ~
+.*
+~*
+
+# ignore node/grunt dependency directories
+node_modules/
+
+# ignore OS generated files
+ehthumbs.db
+Thumbs.db
+
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# -------------------------
+# BEGIN Whitelisted Files
+# -------------------------
+
+# track these files, if they exist
+!.gitignore
+!.editorconfig

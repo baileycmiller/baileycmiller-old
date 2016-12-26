@@ -1,0 +1,64 @@
+/**
+Colors
+**/
+
+//Body
+html, body {
+    color: $black-color;
+    background-color: $background-color;
+}
+
+a {
+  color: $red-color;
+  &:hover {
+    color: $black-color;
+  }
+}
+
+//Header
+#mainheader #menu li a {
+    color: $black-color;
+}
+
+#mainheader #menu a:hover {
+    color: $red-color;
+}
+
+#mainheader #menu #current {
+    color: $red-color;
+}
+
+//Footer
+footer p {
+    color: $black-color;
+}
+
+//Buttons
+#meet {
+  color: $red-color;
+}
+
+#meet:hover {
+    color: $white-color;
+    background: $red-color;
+}
+
+//About page only
+
+#social a {
+    color: $red-color;
+}
+
+#social a:hover {
+    color: $black-color;
+}
+
+//Home page only
+#subheading {
+    color: $black-color;
+}
+
+//Work pages only
+#normalp {
+    color: $black-color;
+}

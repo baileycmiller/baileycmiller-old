@@ -1,0 +1,69 @@
+/**
+Header styles
+**/
+
+#mainheader {
+  width: 100%;
+  height: 140px;
+  margin-bottom: 0px;
+  padding: 10px 0 0 0;
+}
+
+header #logo {
+    float: left;
+    max-width: 20%;
+}
+
+#mainheader #menu {
+    float: right;
+    text-align: right;
+    min-width: 260px;
+    margin: 25px 0px 0px 0px;
+    padding: 0px;
+}
+
+#mainheader #menu li {
+    display: inline;
+    margin: 0 3% 0 3%;
+}
+
+#mainheader #menu #current {
+  border-bottom: 5px solid $red-color;
+}
+
+
+
+
+/*small screens only*/
+@media only screen and (max-width: 1000px) { 
+    #mainheader {
+        height: 80px;
+    } 
+}
+
+
+/*big screens only*/
+@media (min-width: 768px) { 
+    #mainheader {
+        height: 120px;
+        margin-bottom: 0px;
+    }  
+    
+    #mainheader #logo {
+        float: left;
+        width: 160px;
+        margin: 10px 0 0 20px;
+    }
+    
+    #mainheader #menu {
+        float: right;
+        text-align: right;
+        width: 500px;
+        margin: 45px 20px 0px 0px;
+    }
+
+    #mainheader #menu li {
+        display: inline;
+        margin: 0 3% 0 3%;
+    }   
+}

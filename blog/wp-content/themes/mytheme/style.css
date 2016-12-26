@@ -1,0 +1,73 @@
+/*
+Theme Name: My Theme
+Theme URI: http://www.baileycmiller.com/blog
+Author: Bailey Miller
+Author URI: http://www.baileycmiller.com
+Template: omega
+Version: 1.0.0
+*/
+
+@import url('../omega/style.css');
+@import url("http://baileycmiller.com/css/main.css");
+
+/*font*/
+
+
+
+body {
+    font-family: 'Lato', Arial, sans-serif;
+    font-weight: 300;
+}
+
+#header > #cssmenu {
+    background: white;
+}
+#logo {
+    float: left;
+    margin: 10px;
+    max-width: 100%;
+    font-size: 50px;
+}
+
+/*
+body {
+    padding: 0px 20px;
+    margin: 100px 0px 0px 0px;
+    background: white;
+}
+.main-content{
+	margin: 50px auto;
+}
+a:hover {
+	color:#000000;
+}
+a{
+	text-decoration:none;
+	color:black;
+}
+
+.widget-area .widget {
+-moz-hyphens: none;
+  -ms-hyphens: none;
+  -webkit-hyphens: none;
+  hyphens: none;
+word-wrap: normal;
+}
+
+
+#header_home #cssmenu{
+background: white;
+}
+
+.entry-header .entry-title{
+    font-weight: 300;
+font-style:italic;
+}
+
+.widget-title{
+    font-weight: 300;
+font-style:italic;
+text-transform: none;
+color: black;
+}
+*/

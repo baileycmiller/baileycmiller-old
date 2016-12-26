@@ -1,0 +1,596 @@
+/**
+MAIN CSS FILE
+**/
+/**
+Variables
+**/
+/**
+Styles unique to the about page
+**/
+#work_content2 {
+  padding: 0; }
+
+#columnLeft {
+  margin-top: 20px;
+  margin-left: 20px;
+  max-width: 350px;
+  float: left; }
+
+#columnRight {
+  margin-top: 20px;
+  max-width: 60%;
+  float: right; }
+
+.aboutImg img {
+  margin: 45px 0;
+  max-width: 100%; }
+
+#social {
+  margin: 0 auto;
+  padding: 0;
+  text-align: center;
+  font-family: "Futura-pt", Arial, sans-serif; }
+
+#social a {
+  color: #a42644; }
+
+#social a:hover {
+  color: #333333; }
+
+#left {
+  text-align: left;
+  margin: 30px 0 0 20px; }
+
+#squigly1 {
+  padding-left: 20px; }
+
+#bigger {
+  font-family: "Futura-pt", Arial, sans-serif;
+  font-size: 22px;
+  /*    margin-left: 20px;*/ }
+
+/*small screens only*/
+@media only screen and (max-width: 1000px) {
+  #columnLeft {
+    margin: 0px auto;
+    max-width: 100%;
+    float: none;
+    text-align: center; }
+  #columnRight {
+    margin-top: 50px;
+    max-width: 100%;
+    padding: 0 20px;
+    float: none; }
+  .aboutImg {
+    margin: 45px auto 40px auto;
+    text-align: center; }
+  #social {
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    font-family: "Futura-pt", Arial, sans-serif; }
+  #bigger {
+    font-family: "Futura-pt", Arial, sans-serif;
+    font-size: 22px; } }
+
+/*big screens only*/
+@media (min-width: 768px) {
+  #work_content2 {
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 600px;
+    padding: 20px 0 40px 0; } }
+
+/**
+Styles used for animations
+**/
+/* make keyframes that tell the start state and the end state of our object */
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+body, .grid, .myslick {
+  opacity: 0;
+  /* make things invisible upon start */
+  -webkit-animation: fadeIn ease-in 1;
+  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+  -moz-animation: fadeIn ease-in 1;
+  animation: fadeIn ease-in 1;
+  -webkit-animation-fill-mode: forwards;
+  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-duration: .7s;
+  -moz-animation-duration: .7s;
+  animation-duration: .7s; }
+
+.grid, .myslick {
+  -webkit-animation-delay: 0.7s;
+  -moz-animation-delay: 0.7s;
+  animation-delay: 0.7s; }
+
+/**
+Styles used for html and body
+**/
+html, body {
+  padding: 0px;
+  margin: 0px;
+  max-height: 100%;
+  font-family: "Lato", Arial, sans-serif;
+  font-weight: 300;
+  color: #333333;
+  background-color: #f6f6f6; }
+
+p {
+  padding: 0 20px;
+  font-size: 18px; }
+
+a {
+  text-decoration: none;
+  color: #a42644;
+  /*    text-transform: uppercase;*/ }
+  a:hover {
+    color: #333333; }
+
+h1, h2, h3 {
+  font-size: 40px;
+  font-family: "Futura-pt", Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: center; }
+
+h4 {
+  font-size: 30px;
+  font-family: "Futura-pt", Arial, sans-serif;
+  font-weight: 400;
+  text-align: center; }
+
+img {
+  max-width: 100%; }
+
+/**
+Button styles
+**/
+#meet {
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 20px;
+  border: 1px solid #a42644;
+  width: 140px;
+  margin: 30px auto;
+  color: #a42644;
+  display: block; }
+
+#meet:hover {
+  text-decoration: none;
+  color: white;
+  background: #a42644; }
+
+/**
+Footer styles
+**/
+footer {
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+  height: 60px; }
+
+footer a {
+  margin: 0 3px; }
+
+footer p {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-family: "Futura-pt", Arial, sans-serif;
+  color: #333333; }
+
+/**
+Header styles
+**/
+#mainheader {
+  width: 100%;
+  height: 140px;
+  margin-bottom: 0px;
+  padding: 10px 0 0 0; }
+
+header #logo {
+  float: left;
+  max-width: 20%; }
+
+#mainheader #menu {
+  float: right;
+  text-align: right;
+  min-width: 260px;
+  margin: 25px 0px 0px 0px;
+  padding: 0px; }
+
+#mainheader #menu li {
+  display: inline;
+  margin: 0 3% 0 3%;
+  font-size: 10px; }
+
+#mainheader #menu li a {
+  font-weight: 500;
+  color: #333333;
+  font-size: 12px;
+  text-transform: uppercase; }
+
+#mainheader #menu a:hover {
+  color: #a42644; }
+
+#mainheader #menu #current {
+  border-bottom: 5px solid #a42644;
+  color: #a42644; }
+
+/*small screens only*/
+@media only screen and (max-width: 1000px) {
+  #mainheader {
+    height: 80px; } }
+
+/*big screens only*/
+@media (min-width: 768px) {
+  #mainheader {
+    height: 120px;
+    margin-bottom: 0px; }
+  #mainheader #logo {
+    float: left;
+    width: 160px;
+    margin: 10px 0 0 20px; }
+  #mainheader #menu {
+    float: right;
+    text-align: right;
+    width: 500px;
+    margin: 45px 20px 0px 0px; }
+  #mainheader #menu li {
+    display: inline;
+    margin: 0 3% 0 3%;
+    font-size: 18px; }
+  #mainheader #menu li a {
+    font-weight: 500;
+    color: #333333;
+    font-size: 16px;
+    text-transform: uppercase; } }
+
+/**
+Styles unique to the home index page
+**/
+#welcome {
+  padding: 0;
+  height: 320px; }
+
+#subheading {
+  font-size: 24px;
+  font-family: "Futura-pt", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  color: #333333;
+  margin: 60px 0px 40px 0;
+  width: 90%;
+  padding: 0px 40px 20px 40px; }
+
+#squigly2 {
+  margin: 0px auto;
+  text-align: center;
+  width: 190px;
+  display: block; }
+
+#titleDiv {
+  position: relative;
+  margin: 0 auto; }
+
+#titleDiv2 {
+  position: relative;
+  width: 350px;
+  margin: 0 auto;
+  padding-bottom: 0px; }
+
+/*big screens only*/
+@media (min-width: 768px) {
+  #welcome {
+    height: 370px;
+    padding: 40px 0 0 0px; }
+  #subheading {
+    font-size: 28px;
+    text-align: center;
+    margin: 40px auto 0 auto;
+    width: 700px;
+    padding: 0px 0px 20px 0px; } }
+
+/**
+Grid styles for Masonry
+**/
+#grid_wrapper {
+  max-width: 1300px;
+  margin: 0px auto 0px auto; }
+
+.grid {
+  margin: 20px auto; }
+
+.grid-item {
+  margin-top: 25px;
+  max-width: 100%; }
+
+.grid-item img {
+  max-width: 100%; }
+
+.hover img:last-child {
+  display: none; }
+
+.hover:hover img:first-child {
+  display: none; }
+
+.hover:hover img:last-child {
+  display: inline-block; }
+
+/**
+Styles for Slick Slider
+**/
+.myslick {
+  margin: 50px 20px; }
+
+.myslick div {
+  margin-bottom: 10px; }
+
+/**
+Vendor styles
+**/
+/* ==========================================================================
+   HTML5 Boilerplate styles - h5bp.com (generated via initializr.com)
+   ========================================================================== */
+html,
+button,
+input,
+select,
+textarea {
+  color: #222; }
+
+body {
+  font-size: 1em;
+  line-height: 1.4;
+  background-color: #F6F6F6; }
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+img {
+  vertical-align: middle; }
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0; }
+
+textarea {
+  resize: vertical; }
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0; }
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+.ir {
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  *text-indent: -9999px; }
+
+.ir:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 150%; }
+
+.hidden {
+  display: none !important;
+  visibility: hidden; }
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto; }
+
+.invisible {
+  visibility: hidden; }
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+@media print {
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+    text-shadow: none !important; }
+  a,
+  a:visited {
+    text-decoration: underline; }
+  a[href]:after {
+    content: " (" attr(href) ")"; }
+  abbr[title]:after {
+    content: " (" attr(title) ")"; }
+  /*
+     * Don't show links for images, or javascript/internal links
+     */
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: ""; }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid; }
+  thead {
+    display: table-header-group;
+    /* h5bp.com/t */ }
+  tr,
+  img {
+    page-break-inside: avoid; }
+  img {
+    max-width: 100% !important; }
+  @page {
+    margin: 0.5cm; }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3; }
+  h2,
+  h3 {
+    page-break-after: avoid; } }
+
+/**
+Styles unique to the work pages
+**/
+#work_content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0; }
+
+#floatleft {
+  margin-left: 0px;
+  max-width: 200px;
+  width: 42%; }
+
+#floatleft2 {
+  text-align: center; }
+
+#floatContainer {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center; }
+
+#nav {
+  text-align: center;
+  margin: 20 0 50px 0; }
+
+#nav img {
+  margin: 20px 20px 40px 20px; }
+
+.centertext {
+  text-align: center;
+  margin: 0 auto; }
+
+#center {
+  text-align: center;
+  margin: 20px; }
+
+.hereLeft {
+  max-width: 49%;
+  float: left;
+  padding-bottom: 20px; }
+
+.hereRight {
+  max-width: 49%;
+  float: right;
+  padding-bottom: 20px; }
+
+.hereCenter {
+  text-align: center;
+  margin: 0px auto;
+  padding-bottom: 20px; }
+
+#hidden {
+  display: block;
+  text-align: center;
+  padding: 20px 0; }
+
+#discusChart, #source {
+  display: none; }
+
+#normalp {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: inherit;
+  padding: 20px 0;
+  font-family: "Lato", Arial, sans-serif;
+  font-weight: 300;
+  color: #333333;
+  font-size: 18px;
+  text-align: left; }
+
+/*big screens only*/
+@media (min-width: 768px) {
+  #floatleft {
+    float: left;
+    margin: 5px 20px 20px 20px; }
+  #floatleft2 {
+    float: left;
+    margin: 30px 20px 20px 20px; }
+  #floatright {
+    float: right;
+    margin: 0 20px 20px 20px; }
+  #floatright2 {
+    float: right;
+    margin: 20px 20px 20px 20px; }
+  .floatright {
+    float: right;
+    margin: 5px 20px 20px 20px; }
+  #work_content p {
+    margin: 0;
+    padding: 0; }
+  #floatContainer {
+    max-width: 100%; }
+  #hidden {
+    display: none; }
+  #discusChart, #source {
+    display: block; } }

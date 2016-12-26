@@ -1,0 +1,33 @@
+/**
+Grid styles for Masonry
+**/
+
+#grid_wrapper {
+    max-width: 1300px;
+    margin: 0px auto 0px auto;
+}
+
+.grid {
+    margin: 20px auto;
+}
+
+.grid-item {
+    margin-top: 25px;
+    max-width: 100%;
+}
+
+.grid-item  img {
+    max-width: 100%;
+}
+
+.hover img:last-child {
+    display: none;
+}
+
+.hover:hover img:first-child {
+    display: none;
+}
+
+.hover:hover img:last-child {
+    display: inline-block;
+}

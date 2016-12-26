@@ -1,0 +1,128 @@
+/**
+Styles unique to the work pages
+**/
+
+#work_content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+#floatleft {
+    margin-left: 0px;
+    max-width: 200px;
+    width: 42%;
+}
+
+#floatleft2 {
+    text-align: center;
+}
+
+#floatContainer {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#nav {
+    text-align: center;
+    margin: 20 0 50px 0;
+}
+
+#nav img {
+    margin: 20px 20px 40px 20px;
+}
+
+.centertext {
+  text-align: center;
+  margin: 0 auto;
+}
+
+#center {
+  text-align: center;
+  margin: 20px;
+}
+
+
+.hereLeft {
+  max-width: 49%;
+  float: left;
+  padding-bottom: 20px;
+}
+
+.hereRight {
+  max-width: 49%;
+  float: right;
+  padding-bottom: 20px;
+}
+
+.hereCenter {
+  text-align: center;
+  margin: 0px auto;
+  padding-bottom: 20px;
+}
+
+#hidden {
+  display: block;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#discusChart, #source {
+  display: none;
+}
+
+#normalp {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: inherit;
+  padding: 20px 0;
+  text-align: left;
+}
+
+
+
+/*big screens only*/
+@media (min-width: 768px) {
+    #floatleft {
+        float: left;
+        margin: 5px 20px 20px 20px;
+    }
+    
+    #floatleft2 {
+        float: left;
+        margin: 30px 20px 20px 20px;
+    }
+    
+    #floatright {
+        float: right;
+        margin: 0 20px 20px 20px;
+    }
+    
+    #floatright2 {
+        float: right;
+        margin: 20px 20px 20px 20px;
+    }
+    
+    .floatright {
+        float: right;
+        margin: 5px 20px 20px 20px;
+    }
+    
+    #work_content p {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #floatContainer {
+        max-width: 100%;
+    }
+    
+    #hidden {
+        display: none;
+    }
+    
+    #discusChart, #source {
+    display: block;
+  }
+}

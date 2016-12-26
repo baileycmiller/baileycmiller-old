@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<head></head>
+<meta charset="utf-8">
+<script src="data.json"></script>
+<script src="js/libs/d3.v2.min.js"></script>
+
+<link rel="stylesheet" href="css/normalize.min.css">
+<link rel="stylesheet" href="css/main.css">
+<link href='https://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
+
+<script src="js/libs/jquery-1.7.2.min.js"></script>
+<script src="js/data_2000.js"></script>
+<script src="js/data_2001.js"></script>
+<script src="js/data_2002.js"></script>
+<script src="js/data_2003.js"></script>
+<script src="js/data_2004.js"></script>
+<script src="js/data_2005.js"></script>
+<script src="js/data_2006.js"></script>
+<script src="js/data_2007.js"></script>
+<script src="js/data_2008.js"></script>
+<script src="js/data_2009.js"></script>
+<script src="js/data_2010.js"></script>
+<script src="js/data_2011.js"></script>
+<script src="js/data_2012.js"></script>
+<script src="js/data_2013.js"></script>
+<script src="js/data_2014.js"></script>
+</head>
+
+<style>
+body{
+    background-color: gray;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.background {
+  fill: gray;
+  pointer-events: all;
+}
+
+.circles, #countries {
+/*	fill: white;*/
+	stroke: #000;
+	stroke-width: .5px;
+	opacity: .7;
+}
+    #sliderIsHere{
+        text-align: center;
+    margin: 0px auto;
+    }
+input{
+    width: 800px;
+    text-align: center;
+    margin: 0px auto;
+}
+#title h1{
+    font-size: 30px;
+    text-align: center;
+    margin: 20px auto 0px auto;
+    color: lightgrey;
+    font-family: 'Lato',sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+#title p{
+    font-size: 16px;
+    text-align: center;
+    margin: 20px auto 20px auto;
+    color: lightgrey;
+    font-family: 'Lato',sans-serif;
+    font-weight: 300;
+}
+#yearLabel{
+    font-size: 60px;
+    text-align: center;
+    margin: 20px auto 20px auto;
+    color: lightgrey;
+    font-family: 'Lato',sans-serif;
+    font-weight: 400;
+}
+#infoBubble{
+            width: 100%;
+            height: 130px;
+            padding: 10px;
+            background-color: darkgray;
+            position: absolute;
+            left: 0;
+            top: 580px;
+}
+#wordBubble {
+            width: 50%;
+            height: 110px;
+            padding: 10px;
+            background-color: darkgray;
+            position: absolute;
+            left: 0;
+            top: 580px;
+/*
+            margin-top: 80px;
+            margin-left: 30px;
+*/
+}
+a{
+    text-decoration: none;
+    color: lightgrey;
+}
+    
+#scatter{
+    width: 700px;
+    height: 500px;
+    float: right;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+#source{
+    position: absolute;
+    top: 35px;
+    left: 20px;
+}
+#source p{
+    font-family: 'Lato',sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: lightgrey;
+}
+#yearDiv{
+    position: absolute;
+    top:600px;
+    right: 50px;
+}
+.axis path,
+.axis line {
+    fill: none;
+    stroke: lightgrey;
+    shape-rendering: crispEdges;
+}
+
+.axis text {
+    font-family: sans-serif;
+    font-size: 11px;
+    fill:none;
+    stroke: lightgrey;
+}
+#sliderIsHere{
+    position: absolute;
+    top: 550px;
+    width: 100%;
+}
+.countryLabel{
+    font-family: 'Lato',sans-serif;
+    font-size: 120pt;
+    font-weight: 400px;
+    color: lightgrey;
+    position: absolute;
+    top: 0px;
+    height: 90px;
+    padding: 0;
+    margin: 0;
+    width: 680px;
+}
+.infoLabel{
+    color: lightgrey;
+    position: absolute;
+    top: -15px;
+    left: 730px;
+    font-family: 'Lato',sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    height: 120px;
+    width: 400px;
+}
+#xlabel{
+    position:absolute;
+    top: 510px;
+    right: 340px;
+    font-family: 'Lato',sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: lightgrey;
+}
+#ylabel{
+    position:absolute;
+    top: 270px;
+    right: -20px;
+    font-family: 'Lato',sans-serif;
+    font-weight: 300;
+    font-size: 12px;
+    color: lightgrey;
+    -ms-transform: rotate(-90deg); /* IE 9 */
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+}
+</style>
+<body>
+    <div id="title">
+        <h1>Malaria in the World</h1>
+    </div>
+	<article id="region">
+	<div id="worldMap" />
+      
+    <div id="chart"></div>
+    <div id="sliderIsHere">
+			<input type="range" min="2000" max="2014" value="2014" oninput = "setYear(this.value);" />
+    </div>
+    <div id="infoBubble"></div>
+        <div id="wordBubble">
+            <div id="source">
+            <p>Sources:<br><a href="http://www.who.int">WHO</a>, <a href="http://www.worldbank.org/">The World Bank</a></p>
+            </div>
+        </div>
+        <div id="yearDiv">
+            <p id="yearLabel">2014</p>
+        </div>
+    </div>
+        <div id="scatter"></div>
+		<p id='xlabel'>Temperature &#8451;</p>
+        <p id='ylabel'>Precipitation (mm)</p>
+	<script>        
+		var width = 660,
+		    height = 450;
+
+		var projection = d3.geo.mercator() //equirectangular, albers
+		    .scale(width)
+		    .translate([0, 100]);
+
+		var path = d3.geo.path()
+		    .projection(projection);
+
+		var svg = d3.select("#worldMap").append("svg")
+		    .attr("width", width)
+		    .attr("height", height);
+
+		svg.append("rect")
+		    .attr("class", "background")
+		    .attr("width", width)
+		    .attr("height", height);
+
+		var countries = svg.append("g")
+		    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")")
+		  .append("g")
+		    .attr("id", "countries");
+
+		//For storing json file name for each year	
+        var data = eval("data_2014");
+        
+        var defs= svg.append('defs')
+            defs.append('pattern')
+                .attr('id', 'pic1')
+                .attr('patternUnits', 'userSpaceOnUse')
+                .attr('width', 320)
+                .attr('height', 320)
+              .append('svg:image')
+                .attr('xlink:href', 'img/background.png')
+                .attr("width", 320)
+                .attr("height", 320)
+                .attr("x", 0)
+                .attr("y", 0);
+        
+		d3.json("js/geo/countries.geo.json", function(json) {
+		  countries.selectAll("path")
+		      .data(json.features)
+		    .enter().append("path")
+		      .attr("d", path)
+                .attr("id", "countries")
+			  .attr("class", function(d,i) {
+					return d.id;
+				})
+            .on('mouseover', function(d,i){
+              d3.selectAll("circle").style('opacity','.4');
+              d3.selectAll("path").style('opacity','.4');
+              
+                var currentCountry = this;
+                d3.select(this).style('stroke-width', '1.5px').style('opacity','1');
+              
+              var thisCountry = $(this).attr("class");
+              d3.selectAll('.'+thisCountry).style('stroke-width', '1.5px').style('opacity','1');
+              
+              for (i = 0; i < data.length; i++) {
+                  
+                  if(data[i].Country == thisCountry) {
+                    if(data[i].Temperature ==null && data[i].Malaria ==null){
+                            $("#wordBubble").html("<p class='countryLabel' style='" + stringLength(data[i].Name) + "'>" + data[i].Name + "</p><p class='infoLabel'><br><strong>Malaria Deaths:</strong> Not Reported<br><strong>Malaria Deaths per 100,000:</strong> Not Reported<br><strong>Average Temperature:</strong> Not Reported<br><strong>Average Precipitation:</strong> " + data[i].Precipitation + " mm<br><strong>Population:</strong> " + data[i].Population + "</p>");
+                      } else if(data[i].Malaria ==null){
+                            $("#wordBubble").html("<p class='countryLabel' style='" + stringLength(data[i].Name) + "'>" + data[i].Name + "</p><p class='infoLabel'><br><strong>Malaria Deaths:</strong> Not Reported<br><strong>Malaria Deaths per 100,000:</strong> Not Reported<br><strong>Average Temperature:</strong> " + data[i].Temperature + "&#8451;<br><strong>Average Precipitation:</strong> " + data[i].Precipitation + " mm<br><strong>Population:</strong> " + data[i].Population + "</p>");
+                      } else if(data[i].Temperature ==null){
+                            $("#wordBubble").html("<p class='countryLabel' style='" + stringLength(data[i].Name) + "'>" + data[i].Name + "</p><p class='infoLabel'><br><strong>Malaria Deaths:</strong> " + data[i].MalariaRough + "<br><strong>Malaria Deaths per 100,000:</strong> Not Reported<br><strong>Average Temperature:</strong> Not Reported<br><strong>Average Precipitation:</strong> Not Reported<br><strong>Population:</strong> " + data[i].Population + "</p>");
+                      } else{
+                      $("#wordBubble").html("<p class='countryLabel' style='" + stringLength(data[i].Name) + "'>" + data[i].Name + "</p><p class='infoLabel'><br><strong>Malaria Deaths:</strong> " + data[i].MalariaRough + "<br><strong>Malaria Deaths Per 100,000:</strong> " + (data[i].Malaria).toFixed(2) + "<br><strong>Average Temperature:</strong> " + data[i].Temperature + "&#8451;<br><strong>Average Precipitation:</strong> " + data[i].Precipitation + " mm<br><strong>Population:</strong> " + data[i].Population + "</p>");
+                  }
+                  
+                }
+              }
+//              $("#wordBubble").show();
+            })
+            .on('mouseout', function(d,i){
+                d3.selectAll('path')
+                    .style('stroke-width', '.5px').style('opacity','.7');
+              d3.selectAll("circle")
+                    .style('stroke-width', '.5px').style('opacity','.7');
+              $("#wordBubble").html("<div id='source'><p>Sources:<br><a href='http://www.who.int'>WHO</a>, <a href='http://www.worldbank.org/'>The World Bank</a></p></div>");
+          });
+            
+            for (i = 0; i < 179; i++) {
+                if(data_2014[i].Malaria == null){
+                    d3.selectAll('.'+data_2014[i].Country).attr("fill", "url(#pic1)");
+                } else if(data_2014[i].Malaria == 0){
+                    d3.selectAll('.'+data_2014[i].Country).style('fill', "white");
+                } else if(data_2014[i].Malaria > 0 && data_2014[i].Malaria < 1){
+                    d3.selectAll('.'+data_2014[i].Country).style('fill', "#f8b9ba");
+                } else if(data_2014[i].Malaria >= 1 && data_2014[i].Malaria < 10){
+                    d3.selectAll('.'+data_2014[i].Country).style('fill', "#dd5b62");
+                } else if(data_2014[i].Malaria >= 10 && data_2014[i].Malaria < 30){
+                    d3.selectAll('.'+data_2014[i].Country).style('fill', "#7e1525");
+                } else if(data_2014[i].Malaria >= 30){
+                    d3.selectAll('.'+data_2014[i].Country).style('fill', "#2f100f");
+                }
+            }
+            
+		});
+        
+
+	function setYear(selectedYear) {
+
+        $("#yearLabel").html(selectedYear);
+        
+        data = eval("data_" + selectedYear);
+        
+        for (i = 0; i < 179; i++) {
+                if(data[i].Malaria == null){  
+d3.selectAll('.'+data[i].Country).style('fill', "");     
+d3.selectAll('.'+data[i].Country).attr("fill", "url(#pic1)");
+                                            
+                } else if(data[i].Malaria == 0){
+                    d3.selectAll('.'+data[i].Country).style('fill', "white");
+                } else if(data[i].Malaria > 0 && data[i].Malaria < 1){
+                    d3.selectAll('.'+data[i].Country).style('fill', "#f8b9ba");
+                } else if(data[i].Malaria >= 1 && data[i].Malaria < 10){
+                    d3.selectAll('.'+data[i].Country).style('fill', "#dd5b62");
+                } else if(data[i].Malaria >= 10 && data[i].Malaria < 30){
+                    d3.selectAll('.'+data[i].Country).style('fill', "#7e1525");
+                } else if(data[i].Malaria >= 30){
+                    d3.selectAll('.'+data[i].Country).style('fill', "#2f100f");
+                }
+                d3.selectAll("#"+data[i].Country+"_circle").attr("r", rscale(data[i].Population));
+            }
+        
+	}
+        
+        
+        
+        w=700;
+        h=500;
+        
+//Scatterplot
+        
+        var rscale = d3.scale.sqrt().domain([40000, 1100000000]).range([3, 20]); 
+        
+        
+        var scatterPlotSVG = d3.select("#scatter")
+                    .append("svg")
+                    .attr("width", w)
+                    .attr("height", h)
+        .attr("transform", "translate(0, 0)");
+        
+        scatterPlotSVG.selectAll("circle")
+                    .data(data)
+                    .enter()
+                    .append("circle")
+                    .attr("cx", function(d,i) {
+                        return 13.5 * (data[i].Temperature +20);
+                   })
+                   .attr("cy", function(d,i) {
+                        return h - (data[i].Precipitation / 7.1) - 400;
+                   })
+                    .attr("class", function(d,i) {
+                            return d.Country + " circles";
+                    })
+                    .attr("id", function (d,i) {
+                        return d.Country+"_circle";
+                    })
+                    .attr('r', function(d, i){
+                        return rscale(data[i].Population);
+                    })
+                    .attr("transform", "translate(0, 370)")
+                    .on('mouseover', function(d,i){
+//                d3.selectAll('.'+circles).style('opacity', '.2');
+            d3.selectAll("circle").style('opacity','.4');
+            d3.selectAll("path").style('opacity','.4');
+            
+                var currentCountry = this;
+                d3.select(this).style('stroke-width', '1.5px').style('opacity','1');
+              
+              var thisCountry = $(this).attr("class");
+            thisCountry = thisCountry.substring(0,thisCountry.length-8);
+                d3.selectAll('.'+thisCountry).style('stroke-width', '1.5px').style('opacity','1');
+            
+              
+              for (i = 0; i < data.length; i++) {
+                  
+                  if(data[i].Country == thisCountry) {
+                      if(data[i].Temperature ==null && data[i].Malaria ==null){
+                            $("#wordBubble").html("<p class='countryLabel' style='" + stringLength(data[i].Name) + "'>" + data[i].Name + "</p><p class='infoLabel'><br><strong>Malaria Deaths:</strong> Not Reported<br><strong>Malaria Deaths per 100,000:</strong> Not Reported<br><strong>Average Temperature:</strong> Not Reported<br><strong>Average Precipitation:</strong> Not Reported<br><strong>Population:</strong> " + data[i].Population + "</p>");
+                      } else if(data[i].Malaria ==null){
+                            $("#wordBubble").html("<p class='countryLabel' style='" + stringLength(data[i].Name) + "'>" + data[i].Name + "</p><p class='infoLabel'><br><strong>Malaria Deaths:</strong> Not Reported<br><strong>Malaria Deaths per 100,000:</strong> Not Reported<br><strong>Average Temperature:</strong> " + data[i].Temperature + "&#8451;<br><strong>Average Precipitation:</strong> " + data[i].Precipitation + " mm<br><strong>Population:</strong> " + data[i].Population + "</p>");
+                      } else if(data[i].Temperature ==null){
+                            $("#wordBubble").html("<p class='countryLabel' style='" + stringLength(data[i].Name) + "'>" + data[i].Name + "</p><p class='infoLabel'><br><strong>Malaria Deaths:</strong> " + data[i].MalariaRough + "<br><strong>Malaria Deaths per 100,000:</strong> Not Reported<br><strong>Average Temperature:</strong> Not Reported<br><strong>Average Precipitation:</strong> Not Reported<br><strong>Population:</strong> " + data[i].Population + "</p>");
+                      } else{
+                      $("#wordBubble").html("<p class='countryLabel' style='" + stringLength(data[i].Name) + "'>" + data[i].Name + "</p><p class='infoLabel'><br><strong>Malaria Deaths:</strong> " + data[i].MalariaRough + "<br><strong>Malaria Deaths Per 100,000:</strong> " + (data[i].Malaria).toFixed(2) + "<br><strong>Average Temperature:</strong> " + data[i].Temperature + "&#8451;<br><strong>Average Precipitation:</strong> " + data[i].Precipitation + " mm<br><strong>Population:</strong> " + data[i].Population + "</p>");
+                  }
+                  
+                }
+              }
+            })
+            .on('mouseout', function(d,i){
+                d3.selectAll("circle")
+                    .style('stroke-width', '.5px').style('opacity','.7');
+            d3.selectAll("path")
+                    .style('stroke-width', '.5px').style('opacity','.7');
+              $("#wordBubble").html("<div id='source'><p>Sources:<br><a href='http://www.who.int'>WHO</a>, <a href='http://www.worldbank.org/'>The World Bank</a></p></div>");
+          });
+        
+        
+drawAxes();
+        
+function drawAxes(){
+        // Set the ranges
+var x = d3.time.scale().domain([-20, 30]).range([10, w-40]);
+var y = d3.scale.linear().domain([3300, 0]).range([0, 470]);
+
+// Define the axes
+var xAxis = d3.svg.axis().scale(x)
+    .orient("bottom").tickFormat(d3.format("d")).tickValues(d3.range(-20, 31, 10));
+
+var yAxis = d3.svg.axis().scale(y)
+    .orient("right").tickFormat(d3.format("d")).tickValues(d3.range(0, 3300, 1000));;
+    
+    
+    //Create an SVG group Element for the Axis elements and call xAxis
+    var xAxisGroup = scatterPlotSVG.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(0, 475)")
+            .call(xAxis);
+
+
+    //Create an SVG group Element for the Axis elements and call yAxis
+    var yAxisGroup = scatterPlotSVG.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(660,5)")
+            .call(yAxis)
+            .append("text")
+            .attr("x", w / 2)
+            .attr("y", 600)
+            .attr("dy", ".71em")
+            .style("text-anchor", "end")
+            .text("Temperature");
+}
+
+function stringLength(string){
+    if (string.length > 20){
+        return "font-size: 35pt; top: 60px;";
+    } else if (string.length > 15){
+        return "font-size: 50pt; top: 40px;";
+    } else if (string.length > 8){
+        return "font-size: 60pt; top: 30px;";
+    } else{
+        return "font-size: 110pt; top: -30px;";
+    }
+}
+        
+//Size of country names 
+        
+        </script>
+	</article>
+</body>
+</html>

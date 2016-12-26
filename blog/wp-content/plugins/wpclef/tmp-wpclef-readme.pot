@@ -1,0 +1,894 @@
+msgid ""
+msgstr "MIME-Version: 1.0\n"
+
+#. Name.
+msgid "Clef Two-Factor Authentication"
+msgstr ""
+
+#. Short description.
+msgid "Modern two-factor that people love to use: strong authentication without passwords or tokens; single sign on/off; magical user experience."
+msgstr ""
+
+#. Screenshot description.
+msgid "Logging into WordPress with Clef"
+msgstr ""
+
+#. Screenshot description.
+msgid "Passwords disabled on wp-login.php"
+msgstr ""
+
+#. Screenshot description.
+msgid "Clef setup wizard"
+msgstr ""
+
+#. Screenshot description.
+msgid "Clef settings page"
+msgstr ""
+
+#. Found in description header.
+msgid "Our Users’ Favorite Features"
+msgstr ""
+
+#. Found in description header.
+msgid "Security Features"
+msgstr ""
+
+#. Found in description header.
+msgid "Configuration Features"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p><strong>No passwords</strong>: login securely with the <a href=\"https://getclef.com/tutorial/\">Clef wave</a>, and enjoy two-factor protection without one-time codes.</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p><strong>No extra devices</strong>: use your smartphone instead of a “third device” such as a USB drive or security key.</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p><strong><a href=\"http://support.getclef.com/article/52-how-does-clef-s-single-sign-on-work\">Single sign on/off</a></strong>: Sync with the Clef Wave once, then enjoy one-click sign ins for all subsequent sites. Also, sign out from all your sites with one-click any time, or <a href=\"http://support.getclef.com/article/72-how-to-adjust-the-duration-of-the-logout-timer\">set the timer</a> to log you out automatically when you’re done working.</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "Clef stores your encrypted private key on your phone rather than in a central database. Thus even in the unlikely event of a catastrophic security breach on Clef’s servers, your login credentials remain secure on your phone."
+msgstr ""
+
+#. Found in description list item.
+msgid "Every Clef login requires two identification factors: your phone and a fingerprint or PIN. So even if your phone is lost or stolen, you’re Clef account will remain secure."
+msgstr ""
+
+#. Found in description list item.
+msgid "brute-force and botnet login attacks"
+msgstr ""
+
+#. Found in description list item, faq list item.
+msgid "weak, leaked, and recycled passwords"
+msgstr ""
+
+#. Found in description list item, faq list item.
+msgid "sending login credentials via an insecure (non-ssl) connection"
+msgstr ""
+
+#. Found in description list item, faq list item.
+msgid "password phishing attempts"
+msgstr ""
+
+#. Found in description list item, faq list item.
+msgid "account takeovers via email breaches"
+msgstr ""
+
+#. Found in description list item.
+msgid "Disable passwords for select WordPress user roles including custom roles."
+msgstr ""
+
+#. Found in description list item.
+msgid "Disable passwords for API access."
+msgstr ""
+
+#. Found in description list item.
+msgid "Accommodate <a href=\"http://support.getclef.com/article/57-how-does-clef-accommodate-wordpress-logins-for-users-who-do-not-have-smartphones\">users who do not have smartphones</a>."
+msgstr ""
+
+#. Found in description list item.
+msgid "<p><strong><a href=\"http://support.getclef.com/article/56-how-do-i-use-the-clef-login-shortcode\">Shortcode support</a></strong>: insert Clef’s “login with your phone” button or the Clef Wave in any post, page, or text widget using the <strong>clef_render_login_button</strong> shortcode.</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p><strong>Standards-based compatibility</strong>: Clef’s WordPress plugin adheres to WordPress coding guidelines and is thus compatible with most mainstream plugins and themes.</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p><strong>Internationalization and localization support</strong>: Arabic, Danish, Dutch, French, German, Greek, Japanese, Latvian, Portuguese, Russian, Spanish. More translations on the way. <a href=\"http://support.getclef.com/article/62-how-to-help-translate-clef-wordpress-plugin\">Help translate Clef</a> into your language.</p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p><strong><a href=\"http://support.getclef.com/article/55-does-clefs-wordpress-plugin-support-multisite-networks\">Multisite network</a> support</strong></p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p><strong>Helpful <a href=\"http://support.getclef.com/\">documentation</a></strong></p>"
+msgstr ""
+
+#. Found in description list item.
+msgid "<p><strong>Free <a href=\"mailto:support@getclef.com\">email</a> support</strong></p>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<a href=\"https://getclef.com\">The Clef mobile app</a> provides password-free, two-factor authentication that is highly secure and enjoyable to use. Just sync your phone with the Clef Wave to log in. <a href=\"http://vimeo.com/103148853\">Watch the 30-sec. demo</a>."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "http://vimeo.com/103148853"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>No passwords</strong>: login securely with the <a href=\"https://getclef.com/tutorial/\">Clef wave</a>, and enjoy two-factor protection without one-time codes."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>No extra devices</strong>: use your smartphone instead of a “third device” such as a USB drive or security key."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong><a href=\"http://support.getclef.com/article/52-how-does-clef-s-single-sign-on-work\">Single sign on/off</a></strong>: Sync with the Clef Wave once, then enjoy one-click sign ins for all subsequent sites. Also, sign out from all your sites with one-click any time, or <a href=\"http://support.getclef.com/article/72-how-to-adjust-the-duration-of-the-logout-timer\">set the timer</a> to log you out automatically when you’re done working."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Strong authentication</strong>: Clef <a href=\"http://blog.getclef.com/2013/05/why-we-need-real-cryptography-instead-of-passwords/\">replaces passwords</a> with highly secure, two-factor logins using the tried-and-true <a href=\"https://en.wikipedia.org/wiki/RSA_(cryptosystem)\">RSA</a> public-key cryptosystem."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Comprehensive protection</strong>: Clef disables passwords for all three WordPress authentication points: Dashboard access, API access, and password resets. Thus it protects against the full spectrum of password-based attack vectors:"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong><a href=\"http://support.getclef.com/article/60-recommended-password-settings-for-clef-wordpress-plugin\">Flexible password settings</a></strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong><a href=\"http://support.getclef.com/article/56-how-do-i-use-the-clef-login-shortcode\">Shortcode support</a></strong>: insert Clef’s “login with your phone” button or the Clef Wave in any post, page, or text widget using the <strong>clef_render_login_button</strong> shortcode."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Standards-based compatibility</strong>: Clef’s WordPress plugin adheres to WordPress coding guidelines and is thus compatible with most mainstream plugins and themes."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Internationalization and localization support</strong>: Arabic, Danish, Dutch, French, German, Greek, Japanese, Latvian, Portuguese, Russian, Spanish. More translations on the way. <a href=\"http://support.getclef.com/article/62-how-to-help-translate-clef-wordpress-plugin\">Help translate Clef</a> into your language."
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong><a href=\"http://support.getclef.com/article/55-does-clefs-wordpress-plugin-support-multisite-networks\">Multisite network</a> support</strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Helpful <a href=\"http://support.getclef.com/\">documentation</a></strong>"
+msgstr ""
+
+#. Found in description paragraph.
+msgid "<strong>Free <a href=\"mailto:support@getclef.com\">email</a> support</strong>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "In your WordPress Dashboard select <strong>Plugins</strong> and then <strong>Add New</strong> from the sidebar menu. Search for <strong>Clef</strong>, and then choose <strong>Install Now.</strong>"
+msgstr ""
+
+#. Found in installation list item.
+msgid "Activate the plugin."
+msgstr ""
+
+#. Found in installation list item.
+msgid "Run the automatic setup wizard."
+msgstr ""
+
+#. Found in installation paragraph.
+msgid "For detailed setup instructions <a href=\"http://support.getclef.com/article/13-setting-up-clef-on-a-wordpress-site\">see the installation guide</a>."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: accommodate new password reset action introduced in WP 4.3"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: automatically send override link to site administrator"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: update Clef logo and README"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: upon activation redirect to default plugins page if Clef is already configured"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: updates translations for all languages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: login issue with websites that had certain caching configurations"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: login issue with websites that had custom login pages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: login issue with websites that did not do output buffering"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: silenced messages for resetting password"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: removes legacy other plugins install page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: uses state parameter on Clef button"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: disable passwords by default for Clef users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: re-add ability to disable registration with Clef"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: add learn more links to settings pages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Enhancement: update README"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: remove duplicate setting for managing ability to register with Clef"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: change WordPress badge language"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: bug where obfuscating login page URL causes rendering issues"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: bug where registration and lost password pages do not render correctly"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: bug where login button shortcode renders out of order"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: bug where invalid logout hook caused PHP error"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: bug where other login page plugins rendered on top of embedded wave"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: allow administrators to disable passwords for custom roles"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: setup tutorial now works in IE9"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: password login error message displays correctly with Clef login embed"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: adds more translations!"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: issue where embedded login was hidden then shown"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: conflict with Polylang plugin where settings would not save"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: issue where PHP error occurred if an error occurred during user registration with Clef"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: store affiliates as string rather than array"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: adds even easier affiliates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: plugin conflict with NextGen Gallery where login iframe does not load"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: plugin conflict with BuddyPress"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: adds easier affiliates"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix: adds better error checking"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: adds shortcode to easily render login button"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: use modal to allow users to login and preserve state when they are logged out with Clef"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: menu notification when user hasn’t configured Clef"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: by default, embed the Wave in the login form rather than making users click a button"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: issue where if passwords were fully disabled, but Clef wasn’t configured, no login form would be shown"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: issue where a new session was opened for every request, not just ones where it was necessary (in admin for Clef users)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: issue where users can connect the same Clef account to two WordPress accounts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: issue where if the heartbeat API wasn’t available, Clef could interfere with the loading of other plugins"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: issue where prompt to add Clef badge was shown even if the badge was already displayed"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: fixes XMLRPC edge case with login on WordPress Mobile App"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: improved onboarding experience for new users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: login now works with Theme My Login (github/clef/wordpress#125)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: login now works with Google Captcha (github/clef/wordpress#127)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: removes unnecessary CSS files on frontend"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: add framework for Clef affiliate referrals"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: add a shortcode for displaying the Clef settings"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: error where invite emails erred when there was a blank email"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: issue where Clef button displayed multiple times"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: customize the Clef login page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: configure default site settings that will be set for all new sites"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: fixes compatibility issue with 5.2"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: new and improved single-page responsive settings page"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: easy user invitations"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: beautiful introduction and tutorial to Clef"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: finer grained password controls"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Feature: restructured code base for easier integrations"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: fix override URL issue"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: fix issue where upgrades are detected incorrectly"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: Clef account is automatically connected when you set up a new account"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: clarifies settings language so it’s a little bit clearer"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: resolves issue with badge prompt displaying multiple times"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: automatically add a badge showing off that your login is protected by Clef"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: adds framework for adding translations to plugin"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Various stability fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: hides login with Clef button if Clef is not configured"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: fixes issue with mobile login where Clef would not work"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: force users with certain permissions to log in with Clef"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: force multisite settings on sub-site users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: adds integration with BruteProtect"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Compatibility update: supports 3.7+"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: adds support using Clef on multisite networks (currently only supports single-domain setups)"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: warns user if they try and disable passwords without a connected Clef account"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New developer feature: restructures plugin to allow easier development"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New developer feature: adds testing framework"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: fixes issue caused by Clef applications that did not request last name from users"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Bug fix: adds state parameter to OAuth flow for connecting a Clef account to a WordPress account"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: require Clef authentication for all users with optional override key. When this new setting is selected, Clef for WordPress enables true password-free WordPress authentication by hiding the default login form and requiring Clef authentication for all users. If the need arises, you can set an optional override key to allow password logins at a secret URL. Secure keys can be generated automatically, or you can input your own key."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: lost password reset protection. If you are running Clef for WordPress in hybrid mode, then lost password resets are disabled for Clef users only. If you are running in full Clef mode, then lost password resets are disabled for all users."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: Clef for Wordpress’ settings are deleted on uninstall"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated feature: better error messages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Various bug fixes"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: connect any Clef account to any WordPress account. This feature removes the restriction on matching emails on Clef and WordPress accounts."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: better error messages"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Fix for FPD"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: JavaScript logout through heartbeat API"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: autofill setup variables"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Changes tested WP compatibility version"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updated feature: instead of changing Clef-enabled users’ passwords every time they sign in to WordPress, usernames and passwords are entirely disabled for Clef accounts"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: single sign-off. When you sign out of your phone, you sign out of all of your WordPress sites."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: greater password protection. If a site admin opts-in, a user’s passwords will be reset to a random 40 characters every time they sign in."
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Beautified WordPress login form with Clef"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "New feature: setup wizard for easy install"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Updates for Clef v2 API"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Added an admin “pointer” to call out the configuration screen on new installs"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "User registration"
+msgstr ""
+
+#. Found in changelog list item.
+msgid "Initial release: log in using the Clef app."
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 6 October 2015"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 18 June 2015"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 11 May 2015"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 27 April 2015"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 23 April 2015"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 22 April 2015"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 17 December 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 20 November 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 3 November 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 2 November 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 29 September 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 4 September 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 6 August 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 29 July 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 21 July 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 26 May 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 22 May 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 17 April 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 19 March 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 12 March 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 24 February 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 4 February 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 30 January 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 21 January 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 13 January 2014"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 21 November 2013"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 15 October 2013"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 3 October 2013"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 20 September 2013"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 10 September 2013"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 9 September 2013"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 2 September 2013"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 30 August 2013"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 11 July 2013"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 19 June 2013"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 26 April 2013"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 22 January 2013"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 18 January 2013"
+msgstr ""
+
+#. Found in changelog paragraph.
+msgid "Released 17 January 2013"
+msgstr ""
+
+#. Found in faq header.
+msgid "Is Clef for WordPress really free?"
+msgstr ""
+
+#. Found in faq header.
+msgid "Can existing users on my WordPress site sign in with Clef after I install the plugin?"
+msgstr ""
+
+#. Found in faq header.
+msgid "How does Clef accommodate logins for WordPress users who do not have smartphones?"
+msgstr ""
+
+#. Found in faq header.
+msgid "What should I do if my phone is lost or stolen, or if I switch to a new phone?"
+msgstr ""
+
+#. Found in faq header.
+msgid "How do I create a custom login page or widget with the Clef login shortcode?"
+msgstr ""
+
+#. Found in faq header.
+msgid "How do I configure Clef for multisite networks?"
+msgstr ""
+
+#. Found in faq header.
+msgid "How secure are Clef logins?"
+msgstr ""
+
+#. Found in faq header.
+msgid "How secure is my data on Clef’s servers?"
+msgstr ""
+
+#. Found in faq list item.
+msgid "unlimited users,"
+msgstr ""
+
+#. Found in faq list item.
+msgid "up to 10K logins per month,"
+msgstr ""
+
+#. Found in faq list item.
+msgid "<a href=\"mailto:support@getclef.com\">email</a> support,"
+msgstr ""
+
+#. Found in faq list item.
+msgid "and basic usage analytics."
+msgstr ""
+
+#. Found in faq list item.
+msgid "<a href=\"http://support.getclef.com/article/32-what-should-i-do-if-my-phone-is-lost-or-stolen\">Deactivate</a> your old phone."
+msgstr ""
+
+#. Found in faq list item.
+msgid "<a href=\"http://support.getclef.com/article/59-how-do-i-move-my-clef-account-to-a-new-phone\">Reactivate</a> on your new phone."
+msgstr ""
+
+#. Found in faq list item.
+msgid "brute-force and botnet attacks"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Yes. Really. Boom! And your free Clef account includes"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Yes. If your users register on their Clef mobile apps using the same email address as their WordPress accounts, they can start using Clef instantly. Otherwise, they can <a href=\"http://support.getclef.com/article/69-linking-the-clef-mobile-app-to-wordpress-users\">link their WP users with their Clef accounts</a> after logging in to the WordPress dashboard."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Also, Clef makes it easy to invite your users with optional invitation emails."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "The <a href=\"http://support.getclef.com/article/60-recommended-password-settings-for-clef-wordpress-plugin\">disable passwords options</a> and <a href=\"http://support.getclef.com/article/11-creating-a-secret-url-where-you-can-log-into-your-wordpress-site-with-a-password\">secret override url</a> provide several options for allowing password logins."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "See <a href=\"http://support.getclef.com/article/57-how-does-clef-accommodate-wordpress-logins-for-users-who-do-not-have-smartphones\">the guide for accommodating users without smartphones</a> for details."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "You can add the Clef Wave or the Clef “login with your phone” button by inserting the <strong>clef_render_login_button</strong> shortcode into any post, page, or text widget. See the <a href=\"http://support.getclef.com/article/56-how-do-i-use-the-clef-login-shortcode\">shortcode guide</a> for details."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "If you have a subdirectory network, then no additional configuration is required."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "If you have a subdomain or full domain network, then you must <a href=\"http://support.getclef.com/article/55-does-clefs-wordpress-plugin-support-multisite-networks\">configure the application domain setting</a> to allow Clef logins at multiple subdomains or domains."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "<a href=\"http://blog.getclef.com/2013/05/why-we-need-real-cryptography-instead-of-passwords/\">Very</a>. Clef leverages the computational power of your smartphone and the proven strengths of distributed, <a href=\"http://blog.getclef.com/2013/10/asymmetric-cryptography-use/\">asymmetric cryptography</a> and <a href=\"http://blog.getclef.com/2013/10/2-factor-authentication/\">multi-factor authentication</a> to provide secure WordPress logins in a beautifully simple and easy-to-use mobile app."
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "When configured to disable passwords, Clef protects WordPress users against the full spectrum of password-based attacks:"
+msgstr ""
+
+#. Found in faq paragraph.
+msgid "Clef’s security architecture is fully distributed, which means Clef stores no user credentials on its servers. When you use the Clef mobile app, you create a profile and a private encryption key that never leave your phone. The Clef app then uses that data to generate a unique, encrypted digital signature every time you log in. Since all of your personal info stays on your phone, nothing in the Clef database can compromise your identity even in the unlikely event that the server is hacked."
+msgstr ""
+
+#. Found in remaining content header.
+msgid "Additional steps for multisite networks, staging sites, and cloned sites"
+msgstr ""
+
+#. Found in remaining content header.
+msgid "Credits"
+msgstr ""
+
+#. Found in remaining content header.
+msgid "Roadmap"
+msgstr ""
+
+#. Found in remaining content list item.
+msgid "For multisite networks, see these <a href=\"http://support.getclef.com/article/55-does-clefs-wordpress-plugin-support-multisite-networks\">additional steps</a>."
+msgstr ""
+
+#. Found in remaining content list item.
+msgid "For using Clef with staging and production URLs, see the <a href=\"http://support.getclef.com/article/75-using-staging-urls-with-clef-s-wordpress-plugin\">staging guide</a>."
+msgstr ""
+
+#. Found in remaining content list item.
+msgid "For assistance with cloning a Clef-enabled site, see the <a href=\"http://support.getclef.com/article/89-using-the-clef-plugin-on-cloned-wordpress-sites\">cloning guide</a>."
+msgstr ""
+
+#. Found in remaining content list item.
+msgid "More localization. To help translate, see <a href=\"http://support.getclef.com/article/62-how-to-help-translate-clef-wordpress-plugin\">the localization guide</a>."
+msgstr ""
+
+#. Found in remaining content list item.
+msgid "Improved invite system for adding new Clef users"
+msgstr ""
+
+#. Found in remaining content list item.
+msgid "Support for Clef team member login and account creation"
+msgstr ""
+
+#. Found in remaining content paragraph.
+msgid "If you have any questions or installation issues, please feel free to email <a href=\"mailto:support@getclef.com\">support@getclef.com</a>."
+msgstr ""
+
+#. Found in remaining content paragraph.
+msgid "<a href=\"http://davidmichaelross.com\">Dave Ross</a> created the original Clef plugin for WordPress. The Clef team continues to develop the plugin further. All trademarks, including the Clef logo, are the property of Clef."
+msgstr ""

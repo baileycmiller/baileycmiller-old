@@ -1,0 +1,156 @@
+/*
+Theme Name: My Theme
+Theme URI: http://www.baileycmiller.com/blog
+Author: Bailey Miller
+Author URI: http://www.baileycmiller.com
+Template: omega
+Version: 1.0.0
+*/
+
+@import url("http://baileycmiller.com/css/main.css");
+@import url('../omega/style.css');
+body {
+    font-family: 'Lato', Arial, sans-serif;
+    font-weight: 300;
+}
+
+body {
+background-color: #f6f6f6;
+}
+.main-content{
+	//margin: 100px auto;
+}
+#mainheader {
+    height: 130px;
+    margin-bottom: 80px;
+    padding: 10px 0 0;
+}
+
+.entry {
+    margin-bottom: 100px;
+}
+a{
+	text-decoration:none;
+    color:#a5a5a5;
+    text-transform: uppercase;
+}
+a:hover {
+	color:black;
+}
+#submit {
+    width: inherit;
+}
+#content h1 {
+    color: #333333;
+    text-align: left;
+}
+.widget-area .widget {
+-moz-hyphens: none;
+  -ms-hyphens: none;
+  -webkit-hyphens: none;
+  hyphens: none;
+word-wrap: normal;
+}
+
+.sidebar-primary {
+    width: 250px;
+}
+
+.entry-header .entry-title{
+font-family: 'Lato', Arial, sans-serif;
+    font-weight: 300;
+font-style:italic;
+text-align: left;
+}
+
+.entry-header .entry-title a {
+color: #333333;
+    font-family: "Lora",Arial,sans-serif;
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 400;
+text-transform: none;
+}
+
+#content article p {
+border-bottom: none;
+    color: #333333;
+    font-family: "Lato",Arial,sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin-bottom: 50px;
+text-align: left;
+max-width: 700px;
+}
+
+.entry-meta{
+text-align: left;
+}
+
+.entry-author, .post-edit-link{
+display:none;
+visibility:hidden;
+}
+
+footer {
+    height: inherit;
+    margin: 0;
+    padding-top: 0;
+    text-align: left;
+    width: inherit;
+    background-color: #f6f6f6;
+}
+
+.widget-title{
+    font-weight: 300;
+font-style:italic;
+text-transform: none;
+color: black;
+}
+
+#footer{
+display:none;
+visibility:hidden;
+}
+.sidebar-primary a {
+    text-decoration: none;
+}
+.sidebar-primary {
+margin-right: 20px;
+}
+body {
+    margin: 0px 0 0;
+}
+.content {
+    float: left;
+    width: 65%;
+margin-left: 5%;
+}
+#content p {
+    height: inherit;
+}
+h4 {
+    font-weight: 300;
+    text-align: left;
+}
+
+@media only screen and (max-width: 1023px) {
+.content {
+    float: none;
+    width: 90%;
+margin-left: 5%;
+}
+#mainheader {
+    height: 150px;
+}
+.sidebar-primary {
+float: left;
+margin-top: 30px;
+margin-left: 5%;
+width: 90%;
+}
+@media only screen and (max-width: 768px) {
+#content article p {
+    font-size: 16px;
+}
+}

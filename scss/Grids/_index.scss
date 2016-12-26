@@ -1,0 +1,51 @@
+/**
+Styles unique to the home index page
+**/
+
+#welcome {
+    padding: 0;
+    height: 320px;
+}
+
+#subheading {
+    margin: 60px 0px 40px 0;
+    width: 90%;
+//    padding: 0px 0px 20px 0px;
+    padding: 0px 40px 20px 40px;
+}
+
+#squigly2 {
+  margin: 0px auto;
+  text-align: center;
+  width: 190px;
+  display: block;
+}
+
+#titleDiv {
+  position: relative;
+  margin: 0 auto;
+}
+
+#titleDiv2 {
+  position: relative;
+  width: 350px;
+  margin: 0 auto;
+  padding-bottom: 0px;
+}
+
+
+
+
+/*big screens only*/
+@media (min-width: 768px) {
+    #welcome {
+        height: 370px;
+        padding: 40px 0 0 0px;
+    }
+    #subheading {
+        text-align: center;
+        margin: 40px auto 0 auto;
+        width: 700px;
+        padding: 0px 0px 20px 0px;
+    }
+}
