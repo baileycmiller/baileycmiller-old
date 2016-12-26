@@ -2,19 +2,20 @@
 MAIN CSS FILE
 **/
 
-//import all partials
-@import
-    "variables",
-    "masonry",
-    "slick",
-    "about",
-    "animations",
-    "body",
-    "buttons",
-    "colors",
-    "footer",
-    "header",
-    "index",
-    "typography",
-    "vendor",
-    "work";
+//import all partials, variables first
+@import "variables";
+@import "animations";
+@import "buttons";
+@import "colors";
+@import "typography";
+
+@import "blocks/about";
+@import "blocks/body";
+@import "blocks/footer";
+@import "blocks/header";
+@import "blocks/index";
+@import "blocks/work";
+
+@import "vendor/masonry";
+@import "vendor/slick";
+@import "vendor/vendor";
