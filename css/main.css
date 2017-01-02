@@ -8,6 +8,8 @@ Variables
 Styles used for animations
 **/
 /* make keyframes that tell the start state and the end state of our object */
+@import url("http://baileycmiller.com/css/main.css");
+@import url("../blog/wp-content/themes/omega/style.css");
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0; }
@@ -180,6 +182,180 @@ footer p {
   #bigger {
     font-family: "Futura-pt", Arial, sans-serif;
     font-size: 22px; } }
+
+/*
+Theme Name: My Theme
+Theme URI: http://www.baileycmiller.com/blog
+Author: Bailey Miller
+Author URI: http://www.baileycmiller.com
+Template: omega
+Version: 1.0.0
+*/
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  font-weight: 300; }
+
+body {
+  background-color: #f6f6f6; }
+
+#mainheader {
+  height: 130px;
+  margin-bottom: 120px;
+  padding: 10px 0 0; }
+
+.entry {
+  margin-bottom: 120px; }
+
+.entry-content a, .entry-summary a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #a42644; }
+
+.entry-content a:hover, .entry-summary a:hover {
+  color: black; }
+
+#submit {
+  width: inherit; }
+
+#content h1 {
+  color: #333333;
+  text-align: left; }
+
+.widget-area .widget {
+  display: none;
+  visibility: hidden;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  -webkit-hyphens: none;
+  hyphens: none;
+  word-wrap: normal; }
+
+.entry-header .entry-title {
+  font-family: 'futura-pt', Arial, sans-serif;
+  font-weight: 400;
+  text-align: center; }
+
+.entry-header .entry-title a {
+  color: #333333;
+  font-family: "futura-pt",Arial,sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: none; }
+
+#content h1 {
+  color: #333333;
+  font-family: "futura-pt",Arial,sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: none;
+  font-style: normal; }
+
+#content article p {
+  border-bottom: none;
+  color: #333333;
+  font-family: "Lato",Arial,sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 50px;
+  text-align: left;
+  max-width: 700px; }
+
+.entry-meta {
+  text-align: center; }
+
+.entry-author, .post-edit-link, .entry-comments-link {
+  display: none;
+  visibility: hidden; }
+
+footer {
+  height: 60px; }
+
+footer {
+  clear: both;
+  width: 100%;
+  text-align: center;
+  padding-bottom: 30px;
+  margin: 50px auto 0 auto; }
+
+footer a {
+  margin: 0 3px; }
+
+.widget-title {
+  font-weight: 300;
+  text-transform: none;
+  color: black; }
+
+body {
+  margin: 0px 0 0; }
+
+.content {
+  float: none;
+  width: 700px;
+  margin: 60px auto 0px auto;
+  padding-bottom: 0; }
+
+#content p {
+  height: inherit; }
+
+h4 {
+  font-weight: 300;
+  text-align: left; }
+
+#nav-below {
+  padding: 0 auto 50px auto;
+  text-align: center; }
+
+.sidebar-primary a {
+  text-decoration: none; }
+
+.sidebar-primary {
+  margin: 0 auto;
+  padding-top: 300px;
+  width: 90%;
+  height: 300px; }
+
+textarea {
+  width: 100%; }
+
+.content {
+  min-height: 100%;
+  height: auto !important;
+  /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -300px;
+  /* the bottom margin is the negative value of the footer's height */ }
+
+#respond {
+  padding: 20px; }
+
+#categories-2 {
+  float: left;
+  margin: 20px;
+  width: 200px; }
+
+#archives-2 {
+  float: left;
+  margin: 20px;
+  width: 200px; }
+
+#recent-posts-2 {
+  float: left;
+  margin: 20px;
+  width: 200px; }
+
+@media only screen and (max-width: 1023px) {
+  .content {
+    max-width: 90%; }
+  #mainheader {
+    height: 150px; } }
+
+@media only screen and (max-width: 768px) {
+  #content article p {
+    font-size: 16px; }
+  #mainheader {
+    margin-bottom: 0px; } }
 
 /**
 Styles unique to the about page
